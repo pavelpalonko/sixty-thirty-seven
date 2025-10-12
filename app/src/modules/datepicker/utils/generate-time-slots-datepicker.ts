@@ -14,7 +14,7 @@ import { DEFAULT_TIME_INTERVAL_MINUTES } from "../datepicker.consts";
 import { TimeSlot } from "../datepicker.types";
 
 type Args = {
-  selectedDate: Date | null;
+  selectedDay: Date | null;
   intervalMinutes?: number;
 };
 
@@ -24,17 +24,17 @@ type Args = {
  * @param selectedDate Selected date to generate times for
  */
 export function generateTimeSlotsDatepicker({
-  selectedDate,
+  selectedDay,
   intervalMinutes = DEFAULT_TIME_INTERVAL_MINUTES,
 }: Args): TimeSlot[] {
-  if (!selectedDate) return [];
+  if (!selectedDay) return [];
 
   const now = new Date();
   const times: TimeSlot[] = [];
-  const isSelectedToday = isToday(selectedDate);
+  const isSelectedToday = isToday(selectedDay);
 
-  let current = setMinutes(setHours(selectedDate, 0), 0);
-  const endOfDay = setMinutes(setHours(selectedDate, 23), 59);
+  let current = setMinutes(setHours(selectedDay, 0), 0);
+  const endOfDay = setMinutes(setHours(selectedDay, 23), 59);
 
   while (isAfter(endOfDay, current)) {
     // skip past times if selected date is today

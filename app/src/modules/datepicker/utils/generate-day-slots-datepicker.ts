@@ -16,7 +16,7 @@ import { DatepickerDay, DatepickerMonth } from "../datepicker.types";
  * @param totalDays Number of days to generate (default = 6 weeks)
  */
 export function generateDaySlotsDatepicker(
-  totalDays: number = DEFAULT_TOTAL_DAYS
+  totalDays: number
 ): DatepickerMonth[] {
   const today = startOfDay(new Date());
   const monthsMap = new Map<string, DatepickerMonth>();
