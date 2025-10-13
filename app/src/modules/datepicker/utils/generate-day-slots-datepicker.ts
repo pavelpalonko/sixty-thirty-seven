@@ -1,4 +1,4 @@
-import { addDays, format, getYear, isToday, startOfDay } from "date-fns";
+import { addDays, format, isToday, startOfDay } from "date-fns";
 
 // consts
 import {
@@ -11,31 +11,31 @@ import {
 // types
 import { DatepickerDay, DatepickerMonth } from "../datepicker.types";
 
+// TODO: skip today if you don't have time
 /**
- * Generates calendar days grouped by month and year.
- * @param totalDays Number of days to generate (default = 6 weeks)
+ * Generates day slots grouped by month, starting from startDate
  */
 export function generateDaySlotsDatepicker(
-  totalDays: number
+  startDate: Date = new Date(),
+  totalDays: number = DEFAULT_TOTAL_DAYS
 ): DatepickerMonth[] {
-  const today = startOfDay(new Date());
+  const start = startOfDay(startDate);
   const monthsMap = new Map<string, DatepickerMonth>();
 
   for (let i = 0; i < totalDays; i++) {
-    const date = addDays(today, i);
-    const year = getYear(date);
+    const date = addDays(start, i);
+    const year = date.getFullYear();
     const month = format(date, FORMAT_MONTH);
     const monthKey = `${month}-${year}`;
 
     const day: DatepickerDay = {
-      date,
+      date: format(date, "yyyy-MM-dd"),
       isToday: isToday(date),
-      nameDay: format(date, FORMAT_DAY_NAME),
-      numberDay: Number(format(date, FORMAT_DAY_NUMBER)),
+      dayNumber: date.getDate(),
+      dayName: format(date, FORMAT_DAY_NAME),
     };
 
     let monthGroup = monthsMap.get(monthKey);
-
     if (!monthGroup) {
       monthGroup = { month, year, days: [] };
       monthsMap.set(monthKey, monthGroup);
