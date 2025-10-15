@@ -36,8 +36,8 @@ function Provider({ children, value }: ProviderProps) {
 }
 
 export const DatepickerComposer = {
+  Action,
   Provider,
   DaySwiper,
   TimeSwiper,
-  Action,
 };

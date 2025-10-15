@@ -8,24 +8,20 @@ import { DatepickerComposer } from "./composer/datepicker-composer";
 
 export function Datepicker() {
   const {
-    isoString,
-
-    daySlots,
-    timeSlots,
-
+    slots,
     confirm,
 
-    selectedDate,
+    selectedDay,
     selectedTime,
-    setSelectedDate,
+    setSelectedDay,
     setSelectedTime,
   } = useCommonDatepicker();
 
   return (
     <DatepickerComposer.Provider
       value={{
-        state: { daySlots, timeSlots, selectedDate, selectedTime },
-        actions: { setSelectedDate, setSelectedTime, confirm },
+        state: { slots, selectedDay, selectedTime },
+        actions: { setSelectedDay, setSelectedTime, confirm },
       }}
     >
       <DatepickerComposer.DaySwiper />

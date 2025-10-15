@@ -1,16 +1,15 @@
-import { DatepickerMonth, TimeSlot } from "../datepicker.types";
+import { DaySlot, TimeSlot } from "../datepicker.types";
 
 export type DatepickerComposerState = {
-  daySlots: DatepickerMonth[];
-  timeSlots: TimeSlot[];
-  selectedDate: string | null;
-  selectedTime: string | null;
+  slots: DaySlot[];
+  selectedDay: DaySlot | null;
+  selectedTime: TimeSlot | null;
 };
 
 export interface DatepickerComposerActions {
   confirm: () => void;
-  setSelectedDate: (date: string | null) => void;
-  setSelectedTime: (time: string | null) => void;
+  setSelectedDay: (day: DaySlot | null) => void;
+  setSelectedTime: (time: TimeSlot | null) => void;
 }
 
 export type DatepickerComposerContext = {

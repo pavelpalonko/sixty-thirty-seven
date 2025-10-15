@@ -2,43 +2,31 @@ import { useCallback, useMemo, useState } from "react";
 import { parseISO } from "date-fns";
 
 // utils
-import { generateIsoDate } from "./utils/generate-iso-date-datepicker";
-import { generateDaySlotsDatepicker } from "./utils/generate-day-slots-datepicker";
-import { generateTimeSlotsDatepicker } from "./utils/generate-time-slots-datepicker";
+import { generateTimeSlots } from "./utils/generate-slots";
+
+// types
+import { DaySlot, TimeSlot } from "./datepicker.types";
 
 export function useCommonDatepicker() {
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [selectedDay, setSelectedDay] = useState<DaySlot | null>(null);
+  const [selectedTime, setSelectedTime] = useState<TimeSlot | null>(null);
 
-  const daySlots = useMemo(() => generateDaySlotsDatepicker(), []);
-
-  const timeSlots = useMemo(() => {
-    if (!selectedDate) return [];
-
-    return generateTimeSlotsDatepicker(selectedDate);
-  }, [selectedDate]);
-
-  const isoString = useMemo(() => {
-    if (!selectedDate || !selectedTime) return null;
-
-    return generateIsoDate(selectedDate, selectedTime);
-  }, [selectedDate, selectedTime]);
+  const slots = useMemo(() => generateTimeSlots({}), []);
 
   const confirm = useCallback(() => {
-    if (isoString) console.log(parseISO(isoString).getTime());
-  }, [isoString]);
+    if (selectedTime) {
+      // TODO: prevent past date
+      console.log(parseISO(selectedTime.time).getTime(), "timestamp");
+    }
+  }, [selectedTime]);
 
   return {
-    isoString,
-
-    daySlots,
-    timeSlots,
-
+    slots,
     confirm,
 
-    selectedDate,
+    selectedDay,
     selectedTime,
-    setSelectedDate,
+    setSelectedDay,
     setSelectedTime,
   };
 }
