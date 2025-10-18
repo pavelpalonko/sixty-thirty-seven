@@ -6,6 +6,9 @@ import { useCommonDatepicker } from "./use-common-datepicker";
 // components
 import { DatepickerComposer } from "./composer/datepicker-composer";
 
+// styles
+import styles from "./datepicker.module.css";
+
 export function Datepicker() {
   const {
     slots,
@@ -24,10 +27,13 @@ export function Datepicker() {
         actions: { setSelectedDay, setSelectedTime, confirm },
       }}
     >
-      <DatepickerComposer.DaySwiper />
-      <DatepickerComposer.TimeSwiper />
+      <div className={styles["datepicker-layout"]}>
+        <DatepickerComposer.DaySwiper />
 
-      <DatepickerComposer.Action />
+        <DatepickerComposer.TimeSwiper />
+
+        <DatepickerComposer.Action />
+      </div>
     </DatepickerComposer.Provider>
   );
 }
