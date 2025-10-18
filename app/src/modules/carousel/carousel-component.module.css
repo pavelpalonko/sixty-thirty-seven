@@ -1,0 +1,8 @@
+.carousel-layout {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  gap: 10px;
+}
