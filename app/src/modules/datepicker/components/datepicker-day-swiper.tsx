@@ -4,59 +4,43 @@ import { format, getDate } from "date-fns";
 import { useDatepickerContext } from "../composer/datepicker-composer";
 import { CarouselComponent } from "@/modules/carousel/carousel-component";
 
+// styles
+import styles from "./datepicker-componets.module.css";
+
 export function DaySwiper() {
   const { state, actions } = useDatepickerContext();
 
   return (
     <div>
       <CarouselComponent>
-        <div
-          style={{
-            display: "flex",
-            width: "300px",
-            gap: "15px",
-            padding: "20px",
-          }}
-        >
-          <CarouselComponent.PrevButton />
+        <div className={styles["days-swiper-layout"]}>
+          <div className={styles["arrow-wrapper"]}>
+            <CarouselComponent.PrevButton />
+          </div>
 
           <CarouselComponent.Viewport>
             {state.slots.map((day, index) => (
               <div
                 key={day.date}
-                style={{
-                  backgroundColor: "gold",
-                  width: "40px",
-                  height: "60px",
-                  display: "flex",
-                  alignItems: "end",
-                }}
+                className={styles["day-element-wrapper"]}
                 onClick={() => actions.setSelectedDay(day)}
               >
-                <div style={{ position: "relative" }}>
-                  {/* only for first elemet of mounth */}
-                  {(index === 0 || getDate(day.date) === 1) && (
-                    <div
-                      style={{
-                        top: "-12px",
-                        fontSize: "12px",
-                        position: "absolute",
-                        backgroundColor: "gray",
-                      }}
-                    >
-                      {format(day.date, "MMM")}
-                    </div>
-                  )}
+                {/* only for first elemet of mounth */}
+                {(index === 0 || getDate(day.date) === 1) && (
+                  <div className={styles["month-name"]}>
+                    {format(day.date, "MMM")}
+                  </div>
+                )}
+                <div>{format(day.date, "EE")}</div>
 
-                  <div>{format(day.date, "EE")}</div>
-
-                  <div>{format(day.date, "dd")}</div>
-                </div>
+                <div>{format(day.date, "dd")}</div>
               </div>
             ))}
           </CarouselComponent.Viewport>
 
-          <CarouselComponent.NextButton />
+          <div className={styles["arrow-wrapper"]}>
+            <CarouselComponent.NextButton />
+          </div>
         </div>
       </CarouselComponent>
     </div>

@@ -6,7 +6,8 @@
   */
   --color-netural-0: #ffffff;
   --color-netural-10: #f7f7fc;
-  --color-netural-20: #dadbe8;
+  --color-netural-20: #e8ebf4;
+  --color-netural-30: #dadbe8;
   --color-netural-50: #8f91a1;
   --color-netural-100: #16171b;
 
@@ -17,12 +18,16 @@
   /* = = = Background colors = = = */
   --color-bg-default: var(--color-neutral-0);
   --color-bg-hover: var(--color-neutral-10);
-  --color-bg-disabled: var(--color-neutral-20);
+  --color-bg-disabled: var(--color-neutral-30);
 
   /* = = = Text colors = = = */
   --color-text-default-w: var(--color-neutral-0);
   --color-text-default-b: var(--color-neutral-100);
   --color-text-description: var(--color-netural-50);
+
+  /* = = =  Border colors = = = */
+  --color-border-default: var(--color-netural-20);
+  --color-border-hover: var(--color-blue-10);
 
   /* 
   
