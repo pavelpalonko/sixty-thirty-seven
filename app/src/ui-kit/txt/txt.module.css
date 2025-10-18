@@ -1,0 +1,69 @@
+.content-text-large {
+  font-size: 16px;
+}
+
+.content-text-medium {
+  font-size: 14px;
+}
+
+.content-text-small {
+  font-size: 13px;
+}
+
+/* Color text stylings */
+.color-default {
+  color: var(--color-text-default-b);
+}
+
+.color-description {
+  color: var(--color-text-description);
+}
+
+.color-light {
+  color: var(--color-text-default-w);
+}
+
+/* Weight text stylings */
+.light {
+  font-weight: var(--weight-light);
+}
+
+.semi-bold {
+  font-weight: var(--weight-semi-bold);
+}
+
+.bold {
+  font-weight: var(--weight-bold);
+}
+
+/* Other text stylings */
+.text-ellipsis {
+  display: -webkit-box;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Keep whole word */
+.keep-word {
+  word-break: break-word;
+}
+
+/* Position styling */
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
