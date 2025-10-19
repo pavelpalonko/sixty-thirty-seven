@@ -10,11 +10,13 @@ import { ButtonFilled } from "@/ui-kit/button/button-filled";
 import styles from "./datepicker-action.module.css";
 
 export function Action() {
-  const { actions } = useDatepickerContext();
+  const { state, actions } = useDatepickerContext();
+
+  const isDisabled = !state.selectedDay || !state.selectedTime;
 
   return (
     <div className={styles["action-wrapper"]}>
-      <ButtonFilled wide onClick={actions.confirm}>
+      <ButtonFilled disabled={isDisabled} wide onClick={actions.confirm}>
         <Txt color="inherit" weight="semiBold">
           Confirm
         </Txt>
