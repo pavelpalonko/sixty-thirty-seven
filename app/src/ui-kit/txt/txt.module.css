@@ -58,16 +58,3 @@
 .keep-word {
   word-break: break-word;
 }
-
-/* Position styling */
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-}
