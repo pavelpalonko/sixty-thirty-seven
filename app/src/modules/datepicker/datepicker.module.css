@@ -1,4 +1,6 @@
 .datepicker-layout {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 
@@ -8,6 +10,8 @@
 
   background-color: var(--color-bg-default);
   border-radius: var(--radius-2x);
+
+  filter: drop-shadow(0px 20px 52px rgba(0, 0, 0, 0.25));
 
   .datepicker-content-wrapper {
     display: flex;
@@ -22,6 +26,7 @@
     border-bottom-right-radius: 0;
 
     padding: var(--spacing-10x) 0;
+    padding-bottom: var(--spacing-3x);
 
     .datepicker-content-wrapper {
       gap: var(--spacing-8x);

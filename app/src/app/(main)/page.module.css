@@ -1,15 +1,17 @@
 .main-layout {
-  background-color: rgb(219, 219, 219);
-  height: 100vh;
+  position: relative;
+  background-color: #f29b18;
 }
 
-.datepicker-section {
+.booking-section {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  height: 100vh;
-  max-width: 600px;
+  min-height: 100dvh;
+  max-width: max-content;
   margin: 0 auto;
 
   @media (max-width: 480px) {
