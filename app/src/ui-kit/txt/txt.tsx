@@ -5,7 +5,7 @@ import styles from "./txt.module.css";
 
 type Props = {
   tagName?: keyof Pick<JSX.IntrinsicElements, "p" | "span" | "div">;
-  color?: "default" | "description" | "light";
+  color?: "default" | "description" | "light" | "inherit";
   align?: "center" | "left" | "right";
   size?: "small" | "medium" | "large";
   weight?: "light" | "semiBold" | "bold";

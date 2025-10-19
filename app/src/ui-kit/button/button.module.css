@@ -1,0 +1,70 @@
+/* 
+
+  Base btn styling, all buttons extends this button
+
+*/
+.base-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  min-width: fit-content;
+  margin: 0;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  color: inherit;
+  font-family: inherit;
+
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+/* 
+
+  Buttons sizings
+
+*/
+.large {
+  font-size: 16px;
+
+  height: 3.75em; /* 60px (60 / 16) */
+  padding: 0 1.13em; /* 18px (18 / 16) */
+}
+
+.small {
+  font-size: 13px;
+
+  height: 3em; /* 40px (40 / 13) */
+  padding: 0 1em; /* 14px (14 / 13) */
+}
+
+.wide {
+  width: 100%;
+  padding: 0;
+}
+
+/* 
+
+  Buttons appearances
+
+*/
+.button-filled {
+  transition: background-color 200ms ease-in;
+
+  &.accent {
+    background-color: var(--color-button-default);
+    color: var(--color-text-default-w);
+
+    @media (hover: hover) {
+      &:not(:disabled):hover {
+        background-color: var(--color-button-default-hover);
+      }
+    }
+  }
+}

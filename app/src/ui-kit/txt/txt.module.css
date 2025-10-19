@@ -23,6 +23,10 @@
   color: var(--color-text-default-w);
 }
 
+.color-inherit {
+  color: inherit;
+}
+
 /* Weight text stylings */
 .light {
   font-weight: var(--weight-light);
