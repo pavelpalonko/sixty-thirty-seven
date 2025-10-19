@@ -1,7 +1,14 @@
 .datepicker-layout {
-  /* display: flex;
-  align-items: center;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
 
-  background-color: white;
+  gap: 40px;
+
+  max-width: 568px;
+
+  margin: 0 auto;
+  padding: var(--spacing-10x) 72px;
+
+  background-color: var(--color-bg-default);
+  border-radius: var(--radius-2x);
 }

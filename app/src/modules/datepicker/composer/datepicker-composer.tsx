@@ -1,8 +1,8 @@
 import { createContext, use } from "react";
 
 // components
-import { DaySwiper } from "../components/datepicker-day-swiper";
-import { TimeSwiper } from "../components/datepicker-time-swiper";
+import { DaySwiper } from "../components/datepicker-day-swiper/datepicker-day-swiper";
+import { TimeSwiper } from "../components/datepicker-time-swiper/datepicker-time-swiper";
 
 // types
 import { DatepickerComposerContext } from "./datepicker-composer.types";

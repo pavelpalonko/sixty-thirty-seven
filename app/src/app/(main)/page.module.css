@@ -1,17 +1,7 @@
 .main-layout {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  height: 100vh;
-
   background-color: rgb(219, 219, 219);
 }
 
 .datepicker-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100%;
+  margin: 0 auto;
 }
