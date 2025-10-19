@@ -7,6 +7,10 @@
 .swiper-viewport-wrapper {
   display: flex;
   gap: var(--spacing-2x);
+
+  @media (max-width: 480px) {
+    padding-left: var(--spacing-5x);
+  }
 }
 
 .swiper-element-wrapper {

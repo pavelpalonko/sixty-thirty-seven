@@ -28,13 +28,19 @@ export function Datepicker() {
       }}
     >
       <div className={styles["datepicker-layout"]}>
-        <DatepickerComposer.Title />
+        <div className={styles["datepicker-content-wrapper"]}>
+          <div className={styles["datepicker-container"]}>
+            <DatepickerComposer.Title />
+          </div>
 
-        <DatepickerComposer.DaySwiper />
+          <DatepickerComposer.DaySwiper />
 
-        <DatepickerComposer.TimeSwiper />
+          <DatepickerComposer.TimeSwiper />
+        </div>
 
-        <DatepickerComposer.Action />
+        <div className={styles["datepicker-container"]}>
+          <DatepickerComposer.Action />
+        </div>
       </div>
     </DatepickerComposer.Provider>
   );

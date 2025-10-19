@@ -1,7 +1,18 @@
 .main-layout {
   background-color: rgb(219, 219, 219);
+  height: 100vh;
 }
 
 .datepicker-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  max-width: 600px;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    justify-content: end;
+  }
 }
