@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+//fonts
+import { Poppins, Kaisei_Tokumin } from "next/font/google";
+
+// styles
+import "../globals.css";
+import "../variables.module.css";
+
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-poppins",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const kaiseiTokumin = Kaisei_Tokumin({
   subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-kaisei",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${poppins.variable} ${kaiseiTokumin.variable}`}>
         {children}
       </body>
     </html>

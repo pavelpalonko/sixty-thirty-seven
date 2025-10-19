@@ -1,0 +1,78 @@
+:root {
+  /* 
+    
+    Color palette
+    
+  */
+  --color-netural-0: #ffffff;
+  --color-netural-10: #f7f7fc;
+  --color-netural-20: #e8ebf4;
+  --color-netural-30: #dadbe8;
+  --color-netural-50: #8f91a1;
+  --color-netural-90: #45464b;
+  --color-netural-100: #16171b;
+
+  --color-yellow-50: #e28f11;
+
+  --color-red-20: #de3a6b;
+
+  /* = = = Background colors = = = */
+  --color-bg-default: var(--color-netural-0);
+  --color-bg-hover: var(--color-netural-10);
+  --color-bg-disabled: var(--color-netural-30);
+
+  /* = = = Text colors = = = */
+  --color-text-default-w: var(--color-netural-0);
+  --color-text-default-b: var(--color-netural-100);
+  --color-text-description: var(--color-netural-50);
+  --color-highlight: var(--color-red-20);
+
+  /* = = =  Border colors = = = */
+  --color-border-default: var(--color-netural-20);
+  --color-border-hover: var(--color-blue-10);
+
+  /*  = = = Button color = = = */
+  --color-button-default: var(--color-netural-100);
+  --color-button-default-hover: var(--color-netural-90);
+
+  /* 
+  
+  Weight
+  
+  */
+  --weight-light: 400;
+  --weight-semi-bold: 500;
+  --weight-bold: 600;
+  --weight-extra-bold: 700;
+
+  /* 
+   
+   Radiuses
+   
+  */
+  --radius-0_5x: 4px;
+  --radius-1x: 8px;
+  --radius-2x: 16px;
+  --redius-20x: 80px;
+
+  /* 
+  
+  Spacings
+  
+  */
+  --spacing-base: 4px;
+
+  --spacing-0_5x: calc(var(--spacing-base) * 0.5); /* 2px */
+  --spacing-x: calc(var(--spacing-base) * 1); /* 4px */
+  --spacing-1_5x: calc(var(--spacing-base) * 1.5); /* 6px */
+  --spacing-2x: calc(var(--spacing-base) * 2); /* 8px */
+  --spacing-2_5x: calc(var(--spacing-base) * 2.5); /* 10px */
+  --spacing-3x: calc(var(--spacing-base) * 3); /* 12px */
+  --spacing-4x: calc(var(--spacing-base) * 4); /* 16px */
+  --spacing-5x: calc(var(--spacing-base) * 5); /* 20px */
+  --spacing-6x: calc(var(--spacing-base) * 6); /* 24px */
+  --spacing-7x: calc(var(--spacing-base) * 7); /* 28px */
+  --spacing-8x: calc(var(--spacing-base) * 8); /* 32px */
+  --spacing-9x: calc(var(--spacing-base) * 9); /* 36px */
+  --spacing-10x: calc(var(--spacing-base) * 10); /* 40px */
+}

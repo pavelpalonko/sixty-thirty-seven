@@ -1,0 +1,39 @@
+.datepicker-layout {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 140px;
+  max-width: 568px;
+  padding: var(--spacing-10x) 72px;
+
+  background-color: var(--color-bg-default);
+  border-radius: var(--radius-2x);
+
+  filter: drop-shadow(0px 20px 52px rgba(0, 0, 0, 0.25));
+
+  .datepicker-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10x);
+  }
+
+  @media (max-width: 480px) {
+    gap: 80px;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    padding: var(--spacing-10x) 0;
+    padding-bottom: var(--spacing-3x);
+
+    .datepicker-content-wrapper {
+      gap: var(--spacing-8x);
+    }
+
+    .datepicker-container {
+      padding: 0 var(--spacing-5x);
+    }
+  }
+}

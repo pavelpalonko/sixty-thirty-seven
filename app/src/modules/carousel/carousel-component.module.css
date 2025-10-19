@@ -4,5 +4,9 @@
 
 .embla__container {
   display: flex;
-  gap: 10px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  flex: 0 0 calc(100% / var(--elemets-count));
 }

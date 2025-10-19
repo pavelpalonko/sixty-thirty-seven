@@ -1,12 +1,13 @@
 import { createContext, use } from "react";
 
 // components
-import { DaySwiper } from "../components/datepicker-day-swiper";
-import { TimeSwiper } from "../components/datepicker-time-swiper";
+import { Title } from "../components/datepicker-title/datepicker-title";
+import { DaySwiper } from "../components/datepicker-day-swiper/datepicker-day-swiper";
+import { TimeSwiper } from "../components/datepicker-time-swiper/datepicker-time-swiper";
 
 // types
 import { DatepickerComposerContext } from "./datepicker-composer.types";
-import { Action } from "../components/datepicker-action";
+import { Action } from "../components/datepicker-action/datepicker-action";
 
 const DatepickerContext = createContext<DatepickerComposerContext | null>(null);
 
@@ -36,6 +37,7 @@ function Provider({ children, value }: ProviderProps) {
 }
 
 export const DatepickerComposer = {
+  Title,
   Action,
   Provider,
   DaySwiper,
