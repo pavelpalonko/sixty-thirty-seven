@@ -1,0 +1,40 @@
+.title-layout {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+
+  align-items: center;
+
+  gap: 20px;
+
+  .image-wrapper {
+    position: relative;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 100%;
+    background-color: aquamarine;
+  }
+
+  .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .header {
+      font-size: 28px;
+      font-weight: var(--weight-extra-bold);
+      font-family: var(--font-kaisei);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .title-layout {
+    display: block;
+  }
+
+  .image-wrapper {
+    display: none;
+  }
+}

@@ -28,6 +28,8 @@ export function Datepicker() {
       }}
     >
       <div className={styles["datepicker-layout"]}>
+        <DatepickerComposer.Title />
+
         <DatepickerComposer.DaySwiper />
 
         <DatepickerComposer.TimeSwiper />
