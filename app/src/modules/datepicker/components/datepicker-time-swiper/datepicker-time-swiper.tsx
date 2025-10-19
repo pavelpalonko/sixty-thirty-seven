@@ -13,7 +13,13 @@ export function TimeSwiper() {
   const { state, actions } = useDatepickerContext();
 
   if (!state.selectedDay) {
-    return <div>select date</div>;
+    return (
+      <div className={styles["fallback-elements"]}>
+        <Txt color="description" size="medium">
+          Please select a day
+        </Txt>
+      </div>
+    );
   }
 
   return (
