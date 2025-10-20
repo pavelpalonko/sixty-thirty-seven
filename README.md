@@ -5,6 +5,10 @@
 First, run the development server:
 
 ```bash
+cd app
+
+npm install
+
 npm run dev
 
 
