@@ -11,12 +11,20 @@ export function useCommonDatepicker() {
   const [selectedDay, setSelectedDay] = useState<DaySlot | null>(null);
   const [selectedTime, setSelectedTime] = useState<TimeSlot | null>(null);
 
-  const slots = useMemo(() => generateTimeSlots({}), []);
+  const slots = useMemo(() => generateTimeSlots({ intervalMinutes: 1 }), []);
 
   const confirm = useCallback(() => {
     if (selectedTime) {
-      // TODO: prevent past date
-      console.log(parseISO(selectedTime.time).getTime(), "timestamp");
+      const now = Date.now();
+      const timestamp = parseISO(selectedTime.time).getTime();
+
+      if (timestamp < now) {
+        console.warn("⛔ You can`t choose time in the past!");
+
+        return;
+      }
+
+      console.log({ timestamp });
     }
   }, [selectedTime]);
 
