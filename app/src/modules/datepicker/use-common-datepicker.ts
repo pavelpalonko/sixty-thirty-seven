@@ -11,7 +11,7 @@ export function useCommonDatepicker() {
   const [selectedDay, setSelectedDay] = useState<DaySlot | null>(null);
   const [selectedTime, setSelectedTime] = useState<TimeSlot | null>(null);
 
-  const slots = useMemo(() => generateTimeSlots({ intervalMinutes: 1 }), []);
+  const slots = useMemo(() => generateTimeSlots({}), []);
 
   const confirm = useCallback(() => {
     if (selectedTime) {
