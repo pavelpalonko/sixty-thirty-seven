@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { parseISO } from "date-fns";
 
 // utils
@@ -27,6 +27,13 @@ export function useCommonDatepicker() {
       console.log({ timestamp });
     }
   }, [selectedTime]);
+
+  /**
+   * clear the selected time after changing the date
+   */
+  useEffect(() => {
+    setSelectedTime(null);
+  }, [selectedDay]);
 
   return {
     slots,

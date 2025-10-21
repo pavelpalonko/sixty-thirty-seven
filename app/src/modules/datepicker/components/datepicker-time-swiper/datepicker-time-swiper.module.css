@@ -35,9 +35,11 @@
   transition: background-color 0.2s ease-in, border-color 0.2s ease-in,
     color 0.2s ease-in;
 
-  &:hover {
-    background-color: var(--color-bg-hover);
-    border-color: var(--color-bg-hover);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--color-bg-hover);
+      border-color: var(--color-bg-hover);
+    }
   }
 
   &.element-selected {

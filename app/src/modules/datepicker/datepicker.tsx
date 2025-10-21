@@ -29,7 +29,7 @@ export function Datepicker() {
     >
       <div className={styles["datepicker-layout"]}>
         <div className={styles["datepicker-content-wrapper"]}>
-          <div className={styles["datepicker-container"]}>
+          <div className={styles["element-container"]}>
             <DatepickerComposer.Title />
           </div>
 
@@ -38,7 +38,7 @@ export function Datepicker() {
           <DatepickerComposer.TimeSwiper />
         </div>
 
-        <div className={styles["datepicker-container"]}>
+        <div className={styles["element-container"]}>
           <DatepickerComposer.Action />
         </div>
       </div>
